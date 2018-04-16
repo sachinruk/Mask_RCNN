@@ -6,6 +6,7 @@ RUN apt-get update \
     curl \
     cmake \
     git \
+    ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
 RUN curl -qsSLkO \
