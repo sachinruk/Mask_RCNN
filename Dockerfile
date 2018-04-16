@@ -14,21 +14,6 @@ RUN curl -qsSLkO \
 
 ENV PATH=/root/miniconda3/bin:$PATH
 
-# RUN conda install -y \
-#     h5py \
-#     pandas \
-#     jupyter \
-#     matplotlib \
-#     seaborn \
-#     scikit-learn \
-#     pandas
-
-# RUN conda config --append channels conda-forge
-
-# RUN conda install -y tensorflow keras
-
-# RUN conda clean --yes --tarballs --packages --source-cache
-
 RUN git clone git@github.com:matterport/Mask_RCNN.git
 RUN cd Mask_RCNN
 RUN pip install -r requirements.txt
@@ -46,5 +31,20 @@ WORKDIR /notebook
 EXPOSE 8888
 
 CMD jupyter notebook --allow-root --no-browser --ip=0.0.0.0 --NotebookApp.token=
+
+# RUN conda install -y \
+#     h5py \
+#     pandas \
+#     jupyter \
+#     matplotlib \
+#     seaborn \
+#     scikit-learn \
+#     pandas
+
+# RUN conda config --append channels conda-forge
+
+# RUN conda install -y tensorflow keras
+
+# RUN conda clean --yes --tarballs --packages --source-cache
 
 
