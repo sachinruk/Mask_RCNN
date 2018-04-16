@@ -17,13 +17,13 @@ RUN curl -qsSLkO \
 ENV PATH=/root/miniconda3/bin:$PATH
 
 RUN git clone https://github.com/matterport/Mask_RCNN.git
-RUN cd Mask_RCNN
+WORKDIR ./Mask_RCNN
 RUN pip install -r requirements.txt
 RUN python setup.py install
 
 # Install pycocotools
 RUN git clone https://github.com/pdollar/coco.git
-RUN cd coco/PythonAPI
+WORKDIR ./coco/PythonAPI
 RUN make
 RUN make install
 RUN python setup.py install
