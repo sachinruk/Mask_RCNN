@@ -5,6 +5,7 @@ RUN apt-get update \
     build-essential \
     curl \
     cmake \
+    git \
   && rm -rf /var/lib/apt/lists/*
 
 RUN curl -qsSLkO \
