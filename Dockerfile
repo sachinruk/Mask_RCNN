@@ -15,7 +15,7 @@ RUN curl -qsSLkO \
 
 ENV PATH=/root/miniconda3/bin:$PATH
 
-RUN git clone git@github.com:matterport/Mask_RCNN.git
+RUN git clone https://github.com/matterport/Mask_RCNN.git
 RUN cd Mask_RCNN
 RUN pip install -r requirements.txt
 RUN python setup.py install
